@@ -2,6 +2,7 @@ openapi: 3.0.0
 info:
   title: news-api
   version: '1.0'
+  description: News API
 servers:
   - url: 'http://localhost:3001/api/v1'
     description: local
@@ -39,6 +40,7 @@ paths:
                         site:
                           id: 1
                           name: Qiita
+                          url: 'https://qiita.com/'
                       - id: 2
                         title: goの記事2
                         url: 'https://qiita.com/go/2'
@@ -49,6 +51,7 @@ paths:
                         site:
                           id: 1
                           name: Qiita
+                          url: 'https://qiita.com/'
                 qiita2:
                   value:
                     articles:
@@ -63,6 +66,7 @@ paths:
                         site:
                           id: 1
                           name: Qiita
+                          url: 'https://qiita.com/'
                       - id: 2
                         title: goの記事2
                         url: 'https://qiita.com/go/2'
@@ -74,6 +78,7 @@ paths:
                         site:
                           id: 1
                           name: Qiita
+                          url: 'https://qiita.com/'
         '500':
           description: Internal Server Error
           content:
@@ -150,9 +155,13 @@ components:
         name:
           type: string
           example: Qiita
+        url:
+          type: string
+          format: uri
       required:
         - id
         - name
+        - url
     Article:
       title: Article
       type: object
