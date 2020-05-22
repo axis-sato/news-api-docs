@@ -112,6 +112,12 @@ paths:
           in: query
           name: tag
           description: 取得対象のタグ名
+        - schema:
+            type: integer
+            minimum: 1
+          in: query
+          name: after
+          description: afterで指定したID以降の記事を取得する
 components:
   schemas:
     Tag:
